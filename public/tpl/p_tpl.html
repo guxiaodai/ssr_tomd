@@ -1,0 +1,61 @@
+{{include './common_header_tpl'}}
+{{if data.product != null}}
+	<h2 class="ui-product-title ">{{getLang()=='cn'?data.product.name_cn:data.product.name_en}}</h2>
+	<!-- product 部分 -->
+	<div class="ui-product">
+		<div class="ui-compro-main">
+			<div class="content" style="text-align: center; margin-bottom: 10px;">
+				<a class="i18n" name="product_watch_video" href="https://www.youtube.com/watch?v=Aw3j6J9ucM8&feature=youtu.be" target="_blank" style="color:#0054ff;margin-left:15px; ">
+					
+				</a>
+			</div>
+			<div class="g-wrap g-clearfix ul-addList">
+				<ul>
+					{{each data.product.images as image}}
+						<li class="ui-compro-main">
+							<div class="main-img">
+								<img class="lazyload" data-image={{image.url}} data-webp={{image.img_webp}} >
+							</div>
+						</li>
+					{{/each}}
+				</ul>						
+			</div>
+		</div>
+	</div>
+
+	<!-- product 部分 -->
+{{/if}}
+
+<!-- productmix -->
+	{{if data.product['is_online'] == 1}}
+	<div class="ui-productmix">
+		<div class="ui-banner-slider">
+			<ul>
+				{{each data.product.images as image}}
+					<li class="ui-compro-main">
+						<div class="img-box">
+							<img class="banner-img" data-image={{image.url}} data-webp={{image.img_webp}}>
+						</div>
+					</li>
+				{{/each}}
+			</ul>
+			<a class="unslider-arrow prev ui-prev"></a>
+			<a class="unslider-arrow next ui-next"></a>
+		</div>
+	</div>
+	{{/if}}
+<!-- /productmix -->
+<!-- recommend -->
+<div class="ui-recommend">
+<h2 class="recommend-title i18n" name="product_may_interest"></h2>
+	<div class="g-wrap">
+		<ul class="recommend-list g-clearfix">
+			
+		</ul>
+	</div>
+</div>
+<!-- /recommend -->
+
+<div class="ui-contact" id="company-foot"></div>
+{{include './common_footer_tpl'}}
+

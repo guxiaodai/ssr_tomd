@@ -1,0 +1,31 @@
+{{include './common_header_tpl'}}
+<div id="content">
+    <h2 class="title i18n" style="font-size:48px;line-height: 120px; height: 120px;text-align: center" name="contact_after_sale"></h2>
+    <div class="ui-sendmail" id="contact">
+        <div class="g-wrap g-clearfix">
+            <div class="ui-send-mail">
+                <h3 class="i18n" name="contact_title"></h3>
+                <p>
+                    <label for="send-name" class="i18n" name="contact_name"></label>
+                    <input type="text" id="send-name">
+                </p>
+                <p>
+                    <label for="send-mail" class="i18n" name="contact_email"></label>
+                    <input type="text" id="send-mail">
+                </p>
+            </div>
+            <div class="ui-send-msg">
+                <div>
+                    <label for="send-msg" class="i18n" name="contact_message"></label>
+                    <textarea id="send-msg"></textarea>
+                    <div class="submit">
+                        <a href="javascript:;" class="i18n" name="contact_submit"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="ui-contact" id="company-foot"></div>
+{{include './common_footer_tpl'}}

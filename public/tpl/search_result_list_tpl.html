@@ -1,0 +1,30 @@
+{{if data.total < 1}}
+<p class="result-num">
+    <span class="i18n" name="find"></span> 0
+    <span class="i18n" name="find_result"></span>
+</p>
+<div class="ui-search-result">
+    <p class="no-result i18n" name="no_result"></p>
+</div>
+{{else}}
+
+<p class="result-num">
+    <span class="i18n" name="find"></span> {{data.total}}
+    <span class="i18n" name="find_result"></span>
+</p>
+<ul class="ui-search-result">
+    {{each data.list as value i}}
+    <li class="result-item">
+        {{if value.type == 1}}
+        <h3 class="title"><a href={{'p.html?id='+value.id}}>{{value.title}}</a></h3>
+        <p class="des">{{value.des}}</p>
+        <p class="link"><a href={{'p.html?id='+value.id}}>{{getUrl(value.type, value.id)}}</a></p>
+        {{else}}
+        <h3 class="title"><a href={{'news.html?id='+value.id}}>{{value.title}}</a></h3>
+        <p class="des">{{value.des}}</p>
+        <p class="link"><a href={{'news.html?id='+value.id}}>{{getUrl(value.type, value.id)}}</a></p>
+        {{/if}}
+    </li>
+    {{/each}}
+</ul>
+{{/if}}

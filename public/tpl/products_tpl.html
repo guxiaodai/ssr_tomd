@@ -1,0 +1,234 @@
+{{include './common_header_tpl'}}
+<div class="ui-banner">
+    <div class="ui-banner-slider" id="banner-box">
+        <ul>
+            {{each data.list as value i}}
+                <li>
+                    {{if !!value.link_pid}}
+                    <a href={{'p.html?id=' + value.link_pid}}>
+                        <img style="min-height: 600px;" class="banner-img" data-image={{value.img_url}} data-webp={{value.webp}}>
+                    </a>
+                    {{else}}
+                    <img style="min-height: 600px;" class="banner-img" data-image={{value.img_url}} data-webp={{value.img_webp}}>
+                    {{/if}}
+                </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>
+
+<div id="product-box">
+    {{each pData.list as value i}}
+    <div class="pro-con">
+        <h1 class="pro-big-tit">{{ value.name }}</h1>
+        {{each value.data as p_data p_index}}
+        {{if p_index%4==0}}
+        <div class="pro-box">
+        {{/if}}
+        <div class="pro-list">
+            <p class="pro-tit">{{p_data.name}}</p>
+            <div class="pro-img">
+                <img class="lazyload" data-image={{p_data.image.url}} data-webp={{p_data.image.img_webp}}>
+            </div>
+            {{if (p_index+1)%4==0||p_index==value.data.length-1}}
+            <div class="pro-intros no-border">
+            {{else}}
+            <div class="pro-intros">
+            {{/if}}
+            {{if p_index%4==0}}
+            <h1 class="pro-big-intro i18n" name="products_intro"></h1>
+            {{/if}}
+            <p>{{p_data.intro}}</p>
+            {{if getLang()=='en'}}
+            <div style="background-color: #fff; color: #fff" class="price">
+            {{else}}
+            <div class="price">
+            {{/if}}
+                {{getLang()}}
+                {{if p_data.is_discount}}
+                价格:<sapn class="line-through"><i>￥</i>{{p_data.price}}</span>
+                    <span><i>￥</i>{{p_data.discount_price}}</span>
+                {{else}}
+                价格:<span>￥{{p_data.price}}</span>
+                {{/if}}
+            </div>
+            </br><a href={{'p.html?id=' + p_data.pid}} class="konw-more i18n" name="products_knowing_more"></a>
+            </div>
+        </div>
+        {{if (p_index+1)%4==0}}
+        </div>
+        {{/if}}
+        {{/each}}
+    </div>
+    {{/each}}
+</div>
+<div id="product-more-box">
+    {{if type=='dataMore.atomizer'}}
+    <div class="pro-con">
+        <h1 class="pro-big-tit">{{ getLocale()=='cn'?'RDTA滴油储油一体雾化器':'RDTA Drip Oil Storage One Atomizer' }}</h1>
+        <div class="pro-box">
+            <div class="pro-list">
+                <p class="pro-tit">Asvape</p>
+                <div class="pro-img">
+                        <img src="../img/logo-products.jpg">
+                </div>
+                <div class="pro-intros">
+                    <h1 class="pro-big-intro i18n" name="products_intro"></h1>
+                    <p>{{getLocale()=='cn'?'敬请期待...':'Coming Soon...'}}</p>
+                    <div class="price">
+                        价格：<span>￥</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pro-list">
+                <p class="pro-tit">Asvape</p>
+                <div class="pro-img">
+                    <img src="../img/logo-products.jpg">
+                </div>
+                <div class="pro-intros">
+                    <p>{{getLocale()=='cn'?'敬请期待...':'Coming Soon...'}}</p>
+                    <div class="price">
+                            价格：<span>￥</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pro-list">
+                <p class="pro-tit">Asvape</p>
+                <div class="pro-img">
+                    <img src="../img/logo-products.jpg">
+                </div>
+                <div class="pro-intros">
+                    <p>{{getLocale()=='cn'?'敬请期待...':'Coming Soon...'}}</p>
+                    <div class="price">
+                            价格：<span>￥</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pro-list">
+                <p class="pro-tit">Asvape</p>
+                <div class="pro-img">
+                    <img src="../img/logo-products.jpg">
+                </div>
+                <div class="pro-intros">
+                    <p>{{getLocale()=='cn'?'敬请期待...':'Coming Soon...'}}</p>
+                    <div class="price">
+                            价格：<span>￥</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{else if type=='accessories'}}
+    <div class="pro-con">
+        <h1 class="pro-big-tit">{{getLocale()=='cn'?'发热丝':'Heating Wire'}}</h1>
+        <div class="pro-box">
+            <div class="pro-list">
+                <p class="pro-tit">Asvape</p>
+                <div class="pro-img">
+                    <img src="../img/logo-products.jpg">
+                </div>
+                <div class="pro-intros">
+                    <h1 class="pro-big-intro i18n" name="products_intro"></h1>
+                    <p>{{getLocale()=='cn'?'敬请期待...':'Coming Soon...'}}</p>
+                    <div class="price">
+                            价格：<span>￥</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pro-list">
+                <p class="pro-tit">Asvape</p>
+                <div class="pro-img">
+                    <img src="../img/logo-products.jpg">
+                </div>
+                <div class="pro-intros">
+                    <p>{{getLocale()=='cn'?'敬请期待...':'Coming Soon...'}}</p>
+                    <div class="price">
+                            价格：<span>￥</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pro-list">
+                <p class="pro-tit">Asvape</p>
+                <div class="pro-img">
+                    <img src="../img/logo-products.jpg">
+                </div>
+                <div class="pro-intros">
+                    <p>{{getLocale()=='cn'?'敬请期待...':'Coming Soon...'}}</p>
+                    <div class="price">
+                            价格：<span>￥</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pro-list">
+                <p class="pro-tit">Asvape</p>
+                <div class="pro-img">
+                    <img src="../img/logo-products.jpg">
+                </div>
+                <div class="pro-intros">
+                    <p>{{getLocale()=='cn'?'敬请期待...':'Coming Soon...'}}</p>
+                    <div class="price">
+                            价格：<span>￥</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pro-con">
+        <h1 class="pro-big-tit"><?=LocaleComponent::getLocale()=='cn'?'棉花':'Cotton'?></h1>
+        <div class="pro-box">
+            <div class="pro-list">
+                <p class="pro-tit">Asvape</p>
+                <div class="pro-img">
+                    <img src="../img/logo-products.jpg">
+                </div>
+                <div class="pro-intros">
+                    <h1 class="pro-big-intro i18n" name="products_intro"></h1>
+                    <p>{{getLocale()=='cn'?'敬请期待...':'Coming Soon...'}}</p>
+                    <div class="price">
+                            价格：<span>￥</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pro-list">
+                <p class="pro-tit">Asvape</p>
+                <div class="pro-img">
+                    <img src="../img/logo-products.jpg">
+                </div>
+                <div class="pro-intros">
+                    <p>{{getLocale()=='cn'?'敬请期待...':'Coming Soon...'}}</p>
+                    <div class="price">
+                            价格：<span>￥</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pro-list">
+                <p class="pro-tit">Asvape</p>
+                <div class="pro-img">
+                    <img src="../img/logo-products.jpg">
+                </div>
+                <div class="pro-intros">
+                    <p>{{getLocale()=='cn'?'敬请期待...':'Coming Soon...'}}</p>
+                    <div class="price">
+                            价格：<span>￥</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pro-list">
+                <p class="pro-tit">Asvape</p>
+                <div class="pro-img">
+                    <img src="../img/logo-products.jpg">
+                </div>
+                <div class="pro-intros">
+                    <p>{{getLocale()=='cn'?'敬请期待...':'Coming Soon...'}}</p>
+                    <div class="price">
+                            价格：<span>￥</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/if}}
+</div>
+<div class="ui-contact" id="company-foot"></div>
+{{include './common_footer_tpl'}}

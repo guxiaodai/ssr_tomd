@@ -1,0 +1,49 @@
+{{include './common_header_tpl'}}
+<div class="ui-news">
+	<div class="g-wrap">
+		<div class="news-box">
+			<span class="g-fl i18n" name="news_news_&_trends"></span>
+			<ul class="mini-news">
+
+				{{each data.newsRoll as item}}
+				<li>
+					<a href="{{'news.html?id='+item.news_id}}">{{item.title}}</a>
+				</li>
+				{{/each}}
+
+			</ul>
+		</div>
+		<div class="news-cneter-title">
+			<h2 class="i18n" name="news_title"></h2>
+		</div>
+		<!-- Nav tabs -->
+		<ul class="nav nav-tabs">
+			<li class="active">
+				<a href="#recent-activity" data-toggle="tab" class="i18n" name="product_info"></a>
+			</li>
+			<li>
+				<a href="#business-consulting" data-toggle="tab" class="i18n" name="company_info"></a>
+			</li>
+		</ul>
+
+		<!-- Tab panes -->
+		<div class="tab-content">
+			<div class="tab-pane active" id="recent-activity">
+				<ul class="news-list g-clearfix recent-list">
+				</ul>
+				<div class="g-pagination recent-pagination">
+				</div>
+			</div>
+			<div class="tab-pane" id="business-consulting">
+				<ul class="news-list business-list  g-clearfix">
+				</ul>
+				<div class="g-pagination business-pagination">
+				</div>
+			</div>
+		</div>
+		<!-- Tab panes -->
+	</div>
+</div>
+
+<div class="ui-contact" id="company-foot"></div>
+{{include './common_footer_tpl'}}

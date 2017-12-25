@@ -1,0 +1,124 @@
+<header class="ui-hd">
+    <div class="hd-topbar">
+        <div class="g-wrap">
+            <div class="g-fr">
+                <div class="g-fl icons">
+                    {{if !isLogin()}}
+                    <a id="goto_login_url" href={{getUser().loginurl}} class="after-line i18n" name="login"></a>
+                    <a target="_blank" href={{getUser().registurl}} class="i18n" name="register" ></a>
+                    {{else}}
+                    <div class="user g-fl">
+                        <img src={{getUser().head_url||"../img/user.png"}} width="40" height="40" alt="">
+                        <div class="user-info">
+                            {{if isset()}}
+                            <div class="user-head">
+                                <img src={{getUser().head_url}} width="40" height="40" alt="">
+                            </div>
+                            <div class="user-name">
+                                <a href={{getUser().modifyurl}} target="_blank">
+                                    <p>
+                                        <span class="i18n" name="username"></span>
+                                        <span>{{getUser().username}}</span>
+                                    </p>
+                                </a>
+                            </div>
+                            {{else}}
+                            <div class="user-head">
+                                <img src={{getUser().head_url||"../img/user.png"}} width="40" height="40" alt="">
+                            </div>
+                            <div class="user-name">
+                                <a href={{getUser().modifyurl}} target="_blank">
+                                    <p><span class="i18n" name="username"></span><span>新用户</span></p>
+                                </a>
+                            </div>
+                            
+                            {{/if}}
+                            <div class="user-operate">
+                                <a href={{getUser().logouturl}} class="i18n" name="logout"></a>
+                            </div>
+                        </div>
+                    </div>
+                    {{/if}}
+                    {{if getLang()=='en'}}
+                    <a class="after-line cn">中文</a>
+                    <a class="en" style="color: darkorange">EN</a>
+                    {{else}}
+                    <a class="after-line cn" style="color: darkorange">中文</a>
+                    <a class="en">EN</a>
+                    {{/if}}
+                </div>
+                <div class="g-fr" style="margin-top: 5px;">
+                    <div class="icon-h-cart">
+                        <a href="#" class="cart">&nbsp;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hd-list" class="h-header">
+        <div class="g-wrap g-clearfix">
+            <a href="home.html" class="logo"></a>
+            <div class="hd-item">
+                <input type="text" id="search-input " class="i18n-input" selectname="nav_search" selectattr="placeholder" />
+                
+                <!-- <div class="icon-h-search-black" style="display: inline-block; margin-left: 10px;">
+                    <a href="javascript:;" id="go-search" class="ser">&nbsp;</a>
+                </div> -->
+                <a href="javascript:;" id="go-search" class="ser">&nbsp;</a>
+                <a href="javascript:;" class="buy i18n" name="nav_buy"></a>
+            </div>
+            <ul class="nav-list">
+                <li>
+                    <a class="you-need i18n" name="nav_you_need"></a>
+                </li>
+                <li>
+                    <a href="customers.html" class="i18n" name="nav_service"></a>
+                </li>
+                <li>
+                    <a href="newCenter.html" class="i18n" name="nav_news_center"></a>
+                </li>
+                <li>
+                    <a href="about.html" class="i18n" name="nav_about_us"></a>
+                </li>
+                <li>
+                    <a href="join.html" class="i18n" name="nav_join_us"></a>
+                </li>
+                <li>
+                    <a href="idea.html" class="i18n" name="nav_support_support"></a>
+                </li>
+                <li>
+                    <a href="community.html" class="i18n" name="nav_forum_community"></a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="drop-down-menu">
+            <div class="drop-menu">
+                <a href="products.html?type=master">
+                    <span class="drop-btn">
+                        <div class="drop-icon"><img src='http://asvape.net/static/files/mm1495598359559kxaq94u7y5hh375dwh8um.jpeg'></div>
+                        <span class="drop-tit i18n" name="master"></span>
+                    </span>
+                </a>
+                <a href="products.html?type=atomizer">
+                    <span class="drop-btn margin-menu">
+                        <div class="drop-icon"><img src='http://asvape.net/static/files/mm149559841141242akdcawgc9vcgi15vxgs.jpeg'></div>
+                        <span class="drop-tit i18n" name="atomizer"></span>
+                    </span>
+                </a>
+                <a href="products.html?type=related">
+                    <span class="drop-btn margin-menu">
+                        <div class="drop-icon"><img src='http://asvape.net/static/files/mm1495598433545gz12pt3spvhtjvkv3tv1d.jpeg'></div>
+                        <span class="drop-tit i18n" name="related"></span>
+                    </span>
+                </a>
+                <a href="products.html?type=accessories">
+                    <span class="drop-btn margin-menu">
+                        <div class="drop-icon"><img src='http://asvape.net/static/files/mm1495598455232iz4gyaz9yn6r7ym0ln0rz.jpeg'></div>
+                        <span class="drop-tit i18n" name="accessories"></span>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>

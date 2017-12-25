@@ -1,0 +1,34 @@
+{{include './common_header_tpl'}}
+<!-- news 部分 -->
+<div class="ui-views">
+	{{if data.title!= ''}}
+	<h2 class="views-title">{{data.news['title']}}</h2>
+	<h6 class="views-sub-title">
+		<span>
+			<span class="i18n" name="news_author"></span>:{{data.news['publisher']}}
+		</span>
+		<span style="margin-left: 20px;">
+			<span class="i18n" name="news_updated"></span>:{{data.news['updated_at']}}
+		</span>
+	</h6>
+	<div class="g-wrap" style="clear: none;">
+		{{#data.news['content']}}
+	</div>
+	{{else}}
+	<h2 class="views-title i18n" name="news_not_exist"></h2>
+{{/if}}
+</div>
+<!-- news 部分 -->
+
+<!-- recommend -->
+<div class="ui-recommend">
+	<h2 class="recommend-title i18n" name="hot_news"></h2>
+	<div class="g-wrap">
+		<ul class="recommend-list g-clearfix">
+		</ul>
+	</div>
+</div>
+
+<!-- /recommend -->
+<div class="ui-contact" id="company-foot"></div>
+{{include './common_footer_tpl'}}

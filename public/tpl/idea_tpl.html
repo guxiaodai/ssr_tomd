@@ -1,0 +1,125 @@
+{{include './common_header_tpl'}}
+<!-- banner部分 -->
+<div class="ui-banner" style="height: 630px;">
+	<div class="g-wrap">
+		<div class="ui-banner-info">
+			<p class="i18n" name="support_download_tip"></p>
+			<p class="i18n" name="support_download_tip2"></p>
+		</div>
+		<div class="ui-banner-icon">
+			<a href="http://asvape.net/static/files/VOD-80W-Asvape.bin" class="i18n" name="support_download_latest"></a>
+		</div>
+		<div class="ui-download">
+			<h2 class="ui-download-title" class="i18n" name="support_download_list_title"></h2>
+			<table class="table" style="height: 200px; overflow-y: scroll;display: block;">
+				<thead>
+				<tr>
+					<td class="i18n" name="support_download_list_date"></td>
+					<td class="i18n" name="support_download_list_description"></td>
+					<td class="i18n" name="support_download_list_package"></td>
+					<td style="min-width: 50px" class="i18n" name="support_download_list_download"></td>
+				</tr>
+				</thead>
+				<tbody>
+				{{each download_list as item}}
+					<tr>
+						<td>{{item['release_date']}}</td>
+						<td>{{item['description']}}</td>
+						<td>{{item['package']}}</td>
+						<td><a href="{{item['download']}}" download target="_blank" class="i18n" name="support_download_list_download"></a></td>
+					</tr>
+				{{/each}}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<!-- banner部分 -->
+
+<!-- myidea部分 -->
+<div class="ui-myidea">
+	<div class="g-wrap">
+		<div class="ui-myidea-info">
+			<p class="i18n" name="support_p_1"></p>
+			<p class="i18n" name="support_p_2"></p>
+			<a class="js-showIdea i18n" href="javascript:void(0);" name="support_my_idea"></a>
+		</div>
+		<div class="ui-myidea-pic">
+			<img src="../img/idea.png" alt="">
+		</div>
+	</div>
+</div>
+<!-- myidea部分 -->
+
+<!-- Creative wall -->
+<div class="ui-wall">
+	<div class="g-wrap">
+		<div class="ui-list-tip i18n" name="support_idea_wall"></div>
+		<div class="ui-idea-list">
+			<div class="operate">
+				<div class="button">
+					<a class="js-new i18n" name="support_new_idea_btn" href="javascript:void(0) ;"></a>
+				</div>
+			</div>
+			<ul class="g-clearfix ideas-list"></ul>
+			<div class="g-pagination"></div>
+		</div>
+		<div class="ui-wall-reply g-clearfix">
+			<div class="g-fl content">
+				<ul class="reply-list"></ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /Creative wall -->
+<div class="modal fade" id="login-modal">
+	<div class="modal-dialog">
+		<div class="modal-content ui-notebox">
+			<p class="i18n" name="login_tip_title"></p>
+			<p class="i18n" name="login_tip_content"></p>
+			<div class="ui-main-choice">
+				<a href="javascript:;" class="m-yes js-yes i18n" name="dialog_yes"></a>
+				<span class="t-or i18n" name="dialog_or"></span>
+				<a href="javascript:;" class="m-no i18n" name="dialog_no" data-dismiss="modal"></a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="newidea-modal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only i18n" name="dialog_close"></span></button>
+				<h4 class="modal-title i18n" name="support_dialog_title"></h4>
+			</div>
+			<form class="ui-wall-form">
+				<div class="main-content g-clearfix">
+					<div class="img-box g-center">
+						<div class="g-center-child">
+							<ul class="upload-imglist"></ul>
+							<div class="picture">
+								<label class="upload-btn"><input id="fileupload" type="file" name="files[]"></label><br />
+							</div>
+						</div>
+
+					</div>
+					<div class="text-box">
+						<input type="text" class="i18n-input" selectname="support_idea_title" selectattr="placeholder"  id="js-idea-title">
+						<textarea class="main-content i18n-input" selectname="support_idea_desc" selectattr="placeholder" id="js-idea-content" ></textarea>
+					</div>
+				</div>
+				<div class="operate">
+					<div class="publish button">
+						<a href="javascript:;" id="js-send-idea" class="i18n" name="support_publish"></a>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<div class="ui-contact" id="company-foot"></div>
+{{include './common_footer_tpl'}}
+
+
+

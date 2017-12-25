@@ -1,0 +1,10 @@
+{{if data.length > 0}}
+{{each data as value i}}
+<li>
+    <i class="glyphicon glyphicon-remove-circle js-remove"></i>
+    <img src={{value}} alt="" />
+</li>
+{{/each}}
+{{else}}
+<li class="nothing-tip i18n" name="support_add_image_tip"></li>
+{{/if}}

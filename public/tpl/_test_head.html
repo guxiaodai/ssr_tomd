@@ -1,0 +1,113 @@
+<!-- header部分 -->
+<header class="ui-hd">
+    <div class="hd-topbar">
+        <div class="g-wrap">
+            <div class="g-fr">
+                <div class="g-fl icons">
+					{{if headData.cur == 1}}
+                        <a id="goto_login_url" href="" class="after-line">登录</a>
+                        <a href="" target="_blank">注册</a>
+                    {{else}}
+                        <div class="user g-fl">
+                            <img src="" width="40" height="40" alt="">
+                            <div class="user-info">
+                                <div class="user-head">
+                                    <img src="" width="40" height="40" alt="">
+                                </div>
+                                <div class="user-name">
+                                    <a href="" target="_blank">
+                                        <p>
+                                            <span>ken1</span>
+                                            <span>ken2</span>
+                                        </p>
+                                    </a>
+                                </div>
+                                <div class="user-operate">
+                                    <a href="">12</a>
+                                </div>
+                            </div>
+                        </div>
+                    {{/if}}
+                    {{if headData.language == 'cn'}}
+                        <a href="javascript:G.changeLang('cn');" class="after-line cn">中文</a>
+                        <a href="javascript:G.changeLang('en');" class="en" style="color: darkorange">EN</a>
+                        {{else}}
+                            <a href="javascript:G.changeLang('cn');" class="after-line cn" style="color: darkorange">中文</a>
+                            <a href="javascript:G.changeLang('en');" class="en">EN</a>
+                    {{/if}}
+                </div>
+                <div class="g-fr">
+                    <a href="#" class="cart">&nbsp;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hd-list" class="h-header">
+        <div class="g-wrap g-clearfix">
+            <div class="g-wrap g-clearfix" style="height: 76px;">
+                <a href="" class="logo"></a>
+                <div class="hd-item">
+                    <input type="text" id="search-input" placeholder="" />
+                    <a href="javascript:;" id="go-search" class="ser" >&nbsp;</a>
+                    <a href="javascript:;" class="buy"></a>
+                </div>
+                <ul class="nav-list">
+                    <li>
+                        <a class="you-need">{{headData.title1}}</a>
+                    </li>
+                    <li>
+                        <a href="">{{headData.title2}}</a>
+                    </li>
+                    <li>
+                        <a href="">{{headData.title3}}</a>
+                    </li>
+                    <li>
+                        <a href="">{{headData.title4}}</a>
+                    </li>
+                    <li>
+                        <a href="">{{headData.title5}}</a>
+                    </li>
+                    <li>
+                        <a href="">{{headData.title6}}</a>
+                    </li>
+                    <li>
+                        <a href="">{{headData.title7}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 产品中心下拉菜单 -->
+        <div class="drop-down-menu">
+            <div class="drop-menu">
+                <a href="/asvape/site/products?type=master">
+                    <span class="drop-btn">
+                        <div class="drop-icon"><img src='http://asvape.net/static/files/mm1495598359559kxaq94u7y5hh375dwh8um.jpeg'></div>
+                        <span class="drop-tit">主机类</span>
+                    </span>
+                </a>
+                <a href="/asvape/site/products?type=atomizer">
+                    <span class="drop-btn margin-menu">
+                        <div class="drop-icon"><img src='http://asvape.net/static/files/mm149559841141242akdcawgc9vcgi15vxgs.jpeg'></div>
+                        <span class="drop-tit">雾化器</span>
+                    </span>
+                </a>
+                <a href="/asvape/site/products?type=related">
+                    <span class="drop-btn margin-menu">
+                        <div class="drop-icon"><img src='http://asvape.net/static/files/mm1495598433545gz12pt3spvhtjvkv3tv1d.jpeg'></div>
+                        <span class="drop-tit">周边</span>
+                    </span>
+                </a>
+                <a href="/asvape/site/products?type=accessories">
+                    <span class="drop-btn margin-menu">
+                        <div class="drop-icon"><img src='http://asvape.net/static/files/mm1495598455232iz4gyaz9yn6r7ym0ln0rz.jpeg'></div>
+                        <span class="drop-tit">配件</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- /header部分 -->
+
+

@@ -1,0 +1,42 @@
+{{include './common_header_tpl'}}
+<h2 class="title i18n" style="font-size:48px;line-height: 120px; height: 120px;text-align: center" name="verify_title">
+	
+</h2>
+<div class="g-wrap g-clearfix">
+	<div style="text-indent: 2em;font-size:16px;line-height: 2.05em" class="i18n" name="verify_desc">
+		
+	</div>
+
+	<div class="clearfix">
+		<div class="verify-box">
+			<div class="verify-box-title i18n" name="verify_box_title">
+				
+			</div>
+			<div class="verify-box-body">
+				<div class="verify-box-input">
+					<form class="form-inline" id="search-form">
+						<div class="form-group">
+							<div class="input-group">
+								<input id="code" type="text" class="form-control code-input i18n-input" selectname="verify_code_placeholder" selectattr="placeholder" >
+								<input id="code-tip" type="hidden" class="i18n-input" selectname="verify_code_tip" selectattr="value"  />
+							</div>
+						</div>
+						<button type="submit" class="btn btn-primary code-search i18n" name="verify_btn_search"></button>
+					</form>
+				</div>
+
+				<div class="verify-box-tip">
+					<div class="ready i18n" name="verify_code_tip"></div>
+					<div class="pass hidden i18n" name="reject_tip"></div>
+					<div class="reject hidden i18n" name="pass_tip"></div>
+
+					<div class="text-center">
+						<div class="back-link hidden i18n" name="verify_back_link"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="ui-contact" id="company-foot"></div>
+{{include './common_footer_tpl'}}

@@ -1,0 +1,28 @@
+{{if data.length > 0}}
+<div class="g-t-center">
+    {{if cur == 1}}
+
+    <a href="javascript:;" class="page-prev disabled i18n" name="pagination_prev"></a>
+    {{else}}
+
+    <a href="javascript:;" class="page-prev i18n" name="pagination_prev"></a>
+    {{/if}}
+    {{each data as value i}}
+    {{if value | isNaN }}
+    {{if value == cur}}
+    <a href="javascript:;" class="active page-item">{{value}}</a>
+    {{else}}
+    <a href="javascript:;" class="page-item">{{value}}</a>
+    {{/if}}
+    {{else}}
+    <span>{{value}}</span>
+    {{/if}}
+    {{/each}}
+    {{if cur == all}}
+    <a href="javascript:;" class="page-next disabled i18n" name="pagination_next"></a>
+    {{else}}
+    <a href="javascript:;" class="page-next i18n" name="pagination_next"></a>
+    {{/if}}
+    <input type="text" class="page-input"><input type="button" class="page-go" value="Go">
+</div>
+{{/if}}

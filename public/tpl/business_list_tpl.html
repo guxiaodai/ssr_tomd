@@ -1,0 +1,12 @@
+{{each data as value i}}
+<li>
+    <div class="news-con">
+        <img src="{{value.image}}" alt="">
+        <h2><a href={{'news.html?id='+value.news_id}}>{{value.title}}</a></h2>
+        <h6><span class="i18n" name="news_author"></span><span>: {{value.publisher}}</span><span class="i18n" name="news_updated"></span><span>: {{value.updated_at}}</span></h6>
+        <p class="des">{{value.des}}</p>
+        <p class="more"><a href={{'news.html?id='+value.news_id}}><span class="i18n" name="news_see_details"></span><span class="g-angle"></span></a></p>
+    </div>
+</li>
+
+{{/each}}

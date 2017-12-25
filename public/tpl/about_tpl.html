@@ -1,0 +1,78 @@
+{{include './common_header_tpl'}}
+<div id="banner" class="ui-banner">
+    {{if !!company&&!!company.banner}}
+        {{if !!company.banner_link}}
+        <a href={{company.banner_link}}>
+            <img src={{company.banner}}>
+        </a>
+        {{else}}
+        <img src={{company.banner}}>
+        {{/if}}
+    {{else}}
+        <img src="../img/h-video.png" alt="">
+    {{/if}}
+</div>
+<div class="ui-compro" id="company-info">
+    {{each data.detail_array as detail index}}
+    
+    {{if !!detail.lang}}
+    <div class="ui-compro-main">
+        <div class="g-wrap g-clearfix">
+            {{if index%2==0}}
+            <div class="g-fl main-img">
+                <img style="width: 586px;height: 412px;" src={{detail.lang.image}}>
+            </div>
+            <div class="g-fr main-content">
+                <h2 class="title">{{detail.lang.title}}</h2>
+                <div class="content">
+                    {{each detail.lang.content as content c_index}}
+                    <p>{{content}}</p>
+                    {{/each}}
+                </div>
+            </div>
+            {{else}}
+            <div class="g-fr main-img">
+                <img style="width: 586px;height: 412px;" src={{detail.lang.image}}>
+            </div>
+            <div class="g-fl main-content">
+                <h2 class="title">{{detail.lang.title}}</h2>
+                <div class="content">
+                    {{each detail.lang.content as $content $c_index}}
+                    <p>{{$content}}</p>
+                    {{/each}}
+                </div>
+            </div>
+            {{/if}}
+        </div>
+    </div>
+    {{/if}}
+    {{/each}}
+</div>
+
+<div class="ui-sendmail" id="contact">
+    <div class="g-wrap g-clearfix">
+        <div class="ui-send-mail">
+            <h3 class="i18n" name="contact_title"></h3>
+            <p>
+                <label for="send-name" class="i18n" name="contact_name"></label>
+                <input type="text" id="send-name">
+            </p>
+            <p>
+                <label for="send-mail" class="i18n" name="contact_email"></label>
+                <input type="text" id="send-mail">
+            </p>
+        </div>
+        <div class="ui-send-msg">
+            <div>
+                <label for="send-msg" class="i18n" name="contact_message"></label>
+                <textarea id="send-msg"></textarea>
+                <div class="submit">
+                    <a href="javascript:;" class="i18n" name="contact_submit"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="ui-contact" id="company-foot"></div>
+{{include './common_footer_tpl'}}

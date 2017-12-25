@@ -1,0 +1,63 @@
+
+
+<div class="g-wrap">
+	<div class="ui-contact-main g-clearfix">
+		<div class="ui-contact-item products-item">
+			<h2 class="title i18n" name="company_product_center"></h2>
+			<ul class="content">
+				{{each p_array as p p_index}}
+				<li>
+					<a href="{{'p.html?id=' + p.pid}}" target="_blank" class="new">{{p.lang.lang=='en'?p.name_en:p.name_cn}}</a>
+					<div class="icon-new"></div>
+				</li>
+				{{/each}}
+				<li>
+					<a href="products.html?type=master" class="i18n" name="company_product_more"></a>
+				</li>
+			</ul>
+		</div>
+		<div class="ui-contact-item about-item">
+			<h2 class="title i18n" name="company_about_us"></h2>
+			<ul class="content">
+				<li>
+					<a href="about.html" class="i18n" name="company_des"></a>
+				</li>
+				<li>QQ: {{company.qq}}</li>
+				<li>
+					<span class="i18n" name="contact_tel"></span>
+					<span>:0755-27460369</span>
+				<li>E-mail:
+					<a href=""> {{company.mail}}</a>
+				</li>
+			</ul>
+		</div>
+		<div class="ui-contact-item join-item">
+			<h2 class="title i18n" name="company_join_us"></h2>
+			<ul class="content">
+				<li>
+					<a href="https://twitter.com/ASVAPEOFFICIAL" target="_blank" class="hot">Twitter</a>
+					<div class="icon-hot"></div>
+				</li>
+				<li>
+					<a href="https://www.facebook.com/AsvapeTech/" target="_blank" class="hot">Facebook</a>
+					<div class="icon-hot"></div>
+				</li>
+				<li>
+					<a href="https://www.instagram.com/asvape.official/" target="_blank" class="hot">Instagram</a>
+					<div class="icon-hot"></div>
+				</li>
+				<li>
+					<a href="https://www.youtube.com/asvapetech" target="_blank" class="hot">YouTube</a>
+					<div class="icon-hot"></div>
+				</li>
+			</ul>
+		</div>
+		<div class="ui-contact-item follow-item">
+			<h2 class="title i18n" name="company_follow_us" style="text-align: center;"></h2>
+			<div class="content img-box">
+				<img src="{{company.qrcode}}" alt="">
+			</div>
+
+		</div>
+	</div>
+</div>

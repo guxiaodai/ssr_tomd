@@ -1,0 +1,52 @@
+{{include './common_header_tpl'}}
+<!-- contact information部分 -->
+	<div class="ui-information">
+		<div class="g-wrap g-clearfix">
+			<div class="ui-info-map" id="map"></div>
+				<div class="ui-info-content">
+			<h3 class="i18n" name="contact_information"></h3>
+			<p class="person" style="display: none;">
+				<span class="i18n" name="contact_person"></span>{{data.company['contacts']}}
+			</p>
+			<p class="postcode">
+				<span class="i18n" name="contact_postcode"></span>: {{data.company['postcode']}}</p>
+			<p class="tel">
+				<span class="i18n" name="contact_tel"></span>: {{data.company['tel']}}</p>
+			<p class="qq">
+				<span class="i18n" name="contact_qq"></span>: {{data.company['qq']}}</p>
+			<p class="email">
+				<span class="i18n" name="contact_email"></span>: {{data.company['mail']}}</p>
+		</div>
+		</div>
+	</div>
+	<h2 class="title i18n" name="contact_after_sale" style="font-size:48px;line-height: 120px; height: 120px;text-align: center"></h2>
+	<!-- send mail部分 -->
+		<div class="ui-sendmail" id="contact">
+		    <div class="g-wrap g-clearfix">
+		        <div class="ui-send-mail">
+		            <h3 class="i18n" name="contact_title"></h3>
+		            <p>
+		                <label for="send-name" class="i18n" name="contact_name"></label>
+		                <input type="text" id="send-name">
+		            </p>
+		            <p>
+		                <label for="send-mail" class="i18n" name="contact_email"></label>
+		                <input type="text" id="send-mail">
+		            </p>
+		        </div>
+		        <div class="ui-send-msg">
+		            <div>
+		                <label for="send-msg" class="i18n" name="contact_message"></label>
+		                <textarea id="send-msg"></textarea>
+		                <div class="submit">
+		                    <a href="javascript:;" class="i18n" name="contact_submit"></a>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+	<!-- /send mail部分 -->
+
+<!-- /contact information部分 -->
+<div class="ui-contact" id="company-foot"></div>
+{{include './common_footer_tpl'}}

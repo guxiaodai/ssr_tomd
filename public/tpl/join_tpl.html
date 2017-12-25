@@ -1,0 +1,25 @@
+{{include './common_header_tpl'}}
+<div class="ui-banner">
+	<img src="../img/join-banner.jpg">
+</div>
+<div class="ui-content">
+	<h2 class="i18n" name="join_title"></h2>
+	<h5 class="i18n" name="join_des"></h5>
+	<ul class="job-slider g-clearfix">
+		{{each data.jobCates as cate}}
+			<li>
+				<img class="lazyload" data-image={{cate.image}} data-webp={{cate.img_webp}}>
+				<p>{{cate['title']}}</p>
+			</li>
+		{{/each}}
+	</ul>
+	<div class="mail ">
+		<p>
+			<span  class="i18n" name="join_contact"></span>
+			<a href="mailto:sophie@asvape.net">sophie@asvape.net</a>
+		</p>
+	</div>
+</div>
+
+<div class="ui-contact" id="company-foot"></div>
+{{include './common_footer_tpl'}}

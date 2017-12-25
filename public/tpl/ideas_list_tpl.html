@@ -1,0 +1,13 @@
+{{if data.length > 0}}
+{{each data as value i}}
+<li>
+    <a style="text-decoration: none;" href="javascript:void (0);" class="js-replyid" data-id={{value.idea_id}}>
+        <h3 class="title-over">{{value.title}}</h3>
+        <img src={{value.img_url_1 || '../img/logo.png'}} alt="">
+        <p>{{value.des}}</p>
+    </a>
+</li>
+{{/each}}
+{{else}}
+<li class="nothing-tip i18n" name="support_no_idea_tip"></li>
+{{/if}}

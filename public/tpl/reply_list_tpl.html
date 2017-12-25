@@ -1,0 +1,54 @@
+<li class="g-clearfix">
+    <div class="reply-ideainfo">
+        <p><span class="i18n" name="support_idea_title"></span>：{{idea.title}}</p>
+        {{if idea.img_url_1}}
+        <img src={{idea.img_url_1}} alt="">
+        {{/if}}
+        {{if idea.img_url_2}}
+        <img src={{idea.img_url_2}} alt="">
+        {{/if}}
+        {{if idea.img_url_3}}
+        <img src={{idea.img_url_3}} alt="">
+        {{/if}}
+        <p> <span class="i18n" name="support_idea_desc"></span>：{{idea.des}}</p>
+    </div>
+    {{if reply.length > 0}}
+    <div class="reply-area">
+        {{each reply as value i}}
+        {{if value.reply_to == -1}}
+        <p class="reply-content">
+            {{if value.is_admin == 1 }}
+            <span class="tit officialreply i18n" name="support_official_reply"></span>
+            {{else}}
+            <span class="tit myreply i18n" name="support_my_reply"></span>
+            {{/if}}
+            <span class="con">
+                <span>{{value.content}}</span>
+                <span class="glyphicon glyphicon-envelope show-reply" style="color: rgb(24, 24, 24);font-size: 23px;" data-id={{value.idea_id}} data-replyid={{value.id}}></span>
+            </span>
+        </p>
+        {{else}}
+        <p class="reply-content tab">
+            {{if value.is_admin == 1 }}
+            <span class="tit officialreply i18n" name="support_official_reply"></span>
+            {{else}}
+            <span class="tit myreply i18n" name="support_my_reply"></span>
+            {{/if}}
+            <span class="con">
+                <span>{{value.content}}</span>
+                <span class="glyphicon glyphicon-envelope show-reply" style="color: rgb(24, 24, 24);font-size: 23px;" data-id={{value.idea_id}} data-replyid={{value.id}}></span>
+            </span>
+        </p>
+        {{/if}}
+        {{/each}}
+    </div>
+    {{/if}}
+    <a href="javascript:;" class="show-replyself btn btn-info">
+        <i class="glyphicon glyphicon-plus"></i> 
+        <span class="i18n" name="support_add_reply"></span>
+    </a>
+    <div class="reply-box g-clearfix">
+        <textarea class="js-replycon"></textarea>
+        <a class="publish i18n" name="support_publish" href="javascript:;"></a>
+    </div>
+</li>

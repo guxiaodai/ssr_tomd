@@ -1,0 +1,17 @@
+{{each data as value i}}
+<li>
+	{{if !!value.news_id}}
+    <a href={{"./news.html?id=" + value.news_id}} style="text-decoration: none;">
+    {{else}}
+    <a href={{"./p.html?id=" + value.link}} style="text-decoration: none;">
+    {{/if}}
+    <div class="img-box">
+        <div class="mask"></div>
+        <img src={{value.image||value.img}} >
+    </div>
+    <h3>
+        <p>{{value.title||value.name}}</p>
+    </h3>
+    </a>
+</li>
+{{/each}}

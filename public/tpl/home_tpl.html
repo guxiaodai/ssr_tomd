@@ -1,0 +1,48 @@
+{{include './common_header_tpl'}}
+<div class="ui-banner">
+    <div class="ui-banner-slider" id="banner-box">
+        <ul>
+            {{each data.list as value i}}
+                <li>
+                    {{if !!value.link_url}}
+                    <a href={{value.link_url}}>
+                        <img style="min-height: 600px;" class="banner-img" data-src={{value.img_url}} data-webp="{{value.img_webp}}">
+                    </a>
+                    {{else}}
+                    <img style="min-height: 600px;" class="banner-img" data-src={{value.img_url}} data-webp="{{value.img_webp}}">
+                    {{/if}}
+                </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>
+
+
+<div class="bot-banner bot-padding">
+    {{each data.product_array as value i}}
+    <a href="{{'p.html?id=' +value.pid}}" target="_blank">
+        {{if !!value.image}}
+        <img style="min-height: 500px" class="lazyload" data-image="{{value.image.url}}" data-webp={{value.image.img_webp}}>
+        {{/if}}
+    </a>
+    {{/each}}
+</div>
+
+<div class="modal fade" id="warning-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="content-main">
+                <h1 class="i18n" name="age_confirm"></h1>
+                <p class="i18n" name="confirm_info"></p>
+                <div class="ui-main-choice">
+                    <a id="a-accept" class="m-yes i18n" name="confirm_yes"></a>
+                    <span>or</span>
+                    <a href="waiting.html" class="m-no i18n" name="confirm_no"></a><br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="ui-contact" id="company-foot"></div>
+
+{{include './common_footer_tpl'}}
